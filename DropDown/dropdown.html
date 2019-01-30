@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+    <!-- libs -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+    <!-- Kentico Custom elements API-->
+    <script src="https://app.kenticocloud.com/js-api/custom-element.js"></script>
+
+    <!-- Custom elements styles -->
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom element HTML -->
+    <div class="disabled_overlay"></div>
+    <div class="dropdown-box">
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
+
+    <!-- Custom element code -->
+    <script>
+        var isDisabled = false;
+
+        function updateDisabled(disabled) {
+        }
+
+        function setupDropdown(option) {
+        }
+
+        function initCustomElement() {
+            try {
+                CustomElement.init((element, _context) => {
+                  CustomElement.setHeight(200);
+                });
+
+                CustomElement.onDisabledChanged(updateDisabled);
+                
+            } catch (err) {
+
+            }
+        }
+
+        initCustomElement();
+    </script>
+</body>
+</html>
